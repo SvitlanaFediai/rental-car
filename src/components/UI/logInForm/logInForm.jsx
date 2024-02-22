@@ -17,8 +17,8 @@ const LogInForm = ({ setIsLoggedIn, showLoader, hideLoader }) => {
   const { showAlert} = useAlertContext();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     e.stopPropagation();
+    e.preventDefault();
     setError("");
 
     const loggedUser = JSON.parse(localStorage.getItem("user"));

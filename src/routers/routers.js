@@ -23,22 +23,4 @@ const routes = [
   { path: PathConstants.CONTACT, element: <Contact /> },
 ];
 
-/*const Routers = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/cars" element={<CarListing />} />
-      <Route path="/cars/:carName" element={<CarDetails />} />
-      <Route path="/cars/:carName/payment" element={<Payment />} />
-      <Route path="/blogs" element={<Blog />} />
-      <Route path="/blogs/:title" element={<BlogDetails />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/:type" element={<Login />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
-  );
-};*/
-
 export default routes;

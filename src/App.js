@@ -35,7 +35,7 @@ function App() {
         ),
       },
     ],
-    { basename: BASE_URL }
+    { basename: process.env.REACT_APP_BASE_URL }
   );
 
   useEffect(() => {

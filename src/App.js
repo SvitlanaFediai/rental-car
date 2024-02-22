@@ -9,7 +9,6 @@ import PathConstants from "./routers/pathConstans";
 import ModalWindow from "./components/UI/modalWindow/modalWindow";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BASE_URL } from "./assets/utils/base";
 
 function App() {
   const router = createBrowserRouter(
@@ -35,7 +34,7 @@ function App() {
         ),
       },
     ],
-    { basename: process.env.REACT_APP_BASE_URL }
+    { basename: "/rental-car" }
   );
 
   useEffect(() => {

@@ -1,0 +1,30 @@
+@import "../../../assets/variables/variables";
+
+.expert {
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+    //flex-wrap: wrap;
+
+    @media only screen and (min-width: 577px) and (max-width: $tablet-start) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      & >* {
+        flex: 0 0 45%;
+      }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: $mobile) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+  }
+}

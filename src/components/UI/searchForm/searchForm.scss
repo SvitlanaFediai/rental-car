@@ -1,0 +1,189 @@
+@import "../../../assets/variables/variables";
+
+.search {
+  position: absolute;
+  bottom: -150px;
+  z-index: 11;
+  width: 100%;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 5px 5px 15px -5px #7c8a97;
+
+    &--left {
+      background: linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)), url("../../../img/toyota-offer-2.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 65px 35px;
+
+      & h2 {
+        font-weight: 600;
+        font-size: 2.8rem;
+        color: $white-color;
+      }
+    }
+
+    &--right {
+      margin-right: 15px;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 0.7rem;
+  
+    }
+
+    &-row {
+      width: 100%;
+      height: 2rem;
+      //grid-column: 3 / 4;
+
+      & input {
+        box-sizing: border-box;
+        border: 1px solid $deep-blue-color;
+        padding: 0 10px;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border-radius: 5px;
+
+        &[type="date"] {
+          width: 100%;
+        }
+
+        &::placeholder {
+          color: $text-color;
+        }
+      }
+
+      & select {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        border: 1px solid $deep-blue-color;
+        outline: none;
+        color: $text-color;
+        border-radius: 5px;
+      }
+    }
+
+    &-time {
+      &::before {
+        content: 'Journey time';
+        //margin-right: 0.8rem;
+        color: $text-color;
+      }
+    }
+  }
+
+  &-btn {
+    //padding: 10px 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: all .7s ease-in-out;
+
+    &:hover {
+      background: $secondary-color;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-end) {
+  .search {
+    bottom: -100px;
+
+    &__form {
+      &--left {
+        padding: 65px 22px;
+  
+        & h2 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+      }
+
+      &-row {
+        & input, 
+        & select {
+          //padding: 7px 10px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .search {
+
+    &__form {
+      flex-direction: column;
+      padding-bottom: 1rem;
+
+      &--left {
+        padding-top: 20px;
+        padding-bottom: 0;
+        background: $white-color;
+        text-align: center;
+
+        & h2 {
+          color: $secondary-color;
+        }
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .search {
+    bottom: -250px;
+
+    &__form {
+      &--left {
+        h2 {
+          font-size: 1rem;
+        }
+      }
+
+      &--right {
+        width: 90%;
+      }
+
+      &-container {
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+        margin: auto;
+      }
+
+      &-row {
+        //grid-column: 1 / 3;
+        margin: auto;
+
+        & input {
+          font-size: 0.7rem;
+          width: 100%;
+        }
+
+        & select {
+          width: 100%;
+          //padding-right: 10px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    &-btn {
+      font-size: .8rem;
+    }
+  }
+}

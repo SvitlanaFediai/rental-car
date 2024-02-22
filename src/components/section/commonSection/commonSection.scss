@@ -1,0 +1,17 @@
+@import "../../../assets/variables/variables";
+
+.common {
+  background: linear-gradient(rgb(0, 13, 107, .6), rgb(0, 13, 107, .6)), url(../../../img/drive2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  min-height: 50vh;
+
+  & h1 {
+    color: $white-color;
+    text-align: center;
+    font-size: 4rem;
+    transform: translateY(50%);
+  }
+}

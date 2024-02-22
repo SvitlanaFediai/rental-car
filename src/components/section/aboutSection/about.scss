@@ -1,0 +1,62 @@
+@import "../../../assets/variables/variables";
+
+.about {
+  &__container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__left {
+    flex-basis: 50%;
+  }
+
+  &__right {
+    flex-basis: 50%;
+  }
+  
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & p i {
+      color: $secondary-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .about {
+    margin-bottom: 0;
+
+    &__container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__left {
+      flex-basis: auto;
+    }
+  
+    &__right {
+      flex-basis: auto;
+    }
+
+    &__items,
+    &__text {
+      font-size: .8rem;
+    }
+
+    &__items {
+      & p i {
+        font-size: .8rem;
+      }
+    }
+  }
+}

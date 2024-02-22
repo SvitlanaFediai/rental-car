@@ -1,0 +1,48 @@
+@import "../../assets/variables/variables";
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  &__form-container {
+    & h5 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    color: $primary-color;
+
+    & i {
+      font-weight: 500;
+      font-size: 1.2rem;
+      transition: all .5s ease-in;
+    }
+
+    & :hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .contact {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+
+    &__form-container,
+    &__info {
+      width: 100%;
+    }
+
+  }
+}
+
+

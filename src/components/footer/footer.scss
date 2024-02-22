@@ -1,0 +1,120 @@
+@import "../../assets/variables/variables";
+
+.footer {
+  background: $primary-color;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  color: rgba(255, 255, 255, 0.715);
+
+  &__container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      
+    }
+  }
+
+  &__logo {
+    flex-basis: 30%;
+  }
+
+  &__logo .logo__img i,
+  span {
+    font-weight: 400;
+    color: $white-color;
+  }
+
+  &__logo span {
+    font-weight: 500;
+  }
+
+  &__text {
+    margin-top: 15px;
+    line-height: 30px;
+  }
+
+  &__title {
+    color: $white-color;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    & a {
+      transition: all .5s ease-in-out;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__info {
+    &-text {
+      font-weight: 300;
+    }
+  }
+
+  &__newsletter {
+
+    &-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border: 1px solid $text-color;
+      border-radius: 50px;
+      background: $blue-color;
+
+      & input {
+        background-color: transparent;
+        color: $white-color;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $text-color;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .footer {
+    &__text {
+      font-size: 0.8rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      margin-top: 15px;
+    }
+
+    &__links {
+      font-size: 0.8rem;
+      gap: 1rem;
+    }
+
+    &__info {
+      &-text {
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    &__copyright {
+      font-size: 0.7rem;
+    }
+  }
+}

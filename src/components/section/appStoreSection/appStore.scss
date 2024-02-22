@@ -1,0 +1,53 @@
+@import "../../../assets/variables/variables";
+
+.app-store {
+  background-image: url(../../../img/pattern.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 400px;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    text-align: center;
+
+    & h2 {
+      font-size: 2rem;
+    }
+
+    & p {
+      font-size: 1.2rem;
+      color: $primary-color;
+    }
+  }
+
+  &__img-box {
+    & a {
+      display: inline-block;
+      max-width: 150px;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .app-store {
+    &__container {
+      & h2 {
+        font-size: 1.5rem;
+      }
+
+      & p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../assets/variables/variables";
+
+.review {
+  &__list {
+    margin-top: 50px;
+  }
+}
+
+.slick-dots li button:before {
+  color: $white-color !important;
+  opacity: 1 !important;;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:hover:before {
+  color: $secondary-color !important;;
+}

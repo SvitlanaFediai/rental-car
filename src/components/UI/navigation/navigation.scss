@@ -1,0 +1,136 @@
+@import "../../../assets/variables/variables";
+
+.menu {
+  padding: 15px 0px;
+  background: $primary-color;
+
+  &__mobile {
+    display: none;
+
+    &--btn span i {
+      color: $white-color;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+
+  &__search {
+    &-box {
+      border: 1px solid $text-color;
+      padding: 7px 12px;
+      display: flex;
+      align-items: center;
+      border-radius: 50px;
+      background: $deep-blue-color;
+  
+      & input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+  
+        &::placeholder {
+          font-size: 0.8rem;
+        }
+      }
+  
+      & span i {
+        color: rgba(255, 255, 255, 0.555);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    column-gap: 2.7rem;
+  }
+
+  &__item {
+    color: $white-color;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      padding: 10px 0;
+      width: 0;
+      border-bottom: 2px solid $secondary-color;
+      color: $secondary-color;
+      content: attr(data-hover);
+      transition: width 0.5s;
+    }
+
+    &:hover,
+    &.active {
+      &::before{
+        width: 100%;
+      }
+    }
+
+    &:hover,
+    &.active {
+      color: $secondary-color;
+    }
+
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .menu {
+
+    &__search {
+      display: none;
+    }
+
+    &__mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .navigation {
+    //background: rgb(0, 13, 107, 0.6);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background: rgb(255, 255, 255, .9);
+    top: 0;
+    right: 0;
+    z-index: 11;
+    padding-top: 50px;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+
+    &__links {
+      //width: 250px;
+      //height: 100%;
+      //background: $white-color;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 2rem;
+    }
+
+    &__item {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+   
+  }
+}

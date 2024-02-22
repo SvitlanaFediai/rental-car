@@ -1,0 +1,144 @@
+@import "../../../assets/variables/variables";
+
+.car {
+  &__item {
+    border: 1px solid $text-color;
+    padding: 20px;
+    border-radius: 5px;
+    //max-width: 280px;
+    //min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all .5s ease-in-out;
+    margin: auto;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: $white-color;
+    }
+    
+  }
+  
+  &__image {
+    //max-width: 250px;
+    //height: 180px;
+    //height: 18rem;
+
+    & img {
+      //display: block;
+      width: 100%;
+      //height: auto;
+      object-fit: contain;
+      aspect-ratio: 16/9;
+  
+      //width: 100%;
+      //height: auto;
+      //object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.35rem;
+  }
+
+  &__text {
+    
+    & i {
+      font-size: 1rem;
+      color: $secondary-color;
+      padding-right: 5px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    width: 100%;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    border: 1px solid transparent;
+
+    & a {
+      font-weight: 500;
+      display: inline-block;
+      width: 100%;
+    }
+
+    &--rent {
+      border-radius: 4px 0px 0px 4px;
+
+      &:hover {
+        background: $secondary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+
+    &--details {
+      background: $secondary-color;
+      border-radius: 0px 4px 4px 0px;
+
+      &:hover {
+        background: $primary-color;
+        border: 1px solid $secondary-color;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .car {
+    &__item {
+      padding: 10px;
+      margin: auto;
+
+      
+    }
+  }
+  
+}
+
+@media only screen and (max-width: $width) {
+  .car {
+    &__item {
+      
+      &:hover {
+        transform: none;
+      }
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+  
+    &__price {
+      font-size: 1rem;
+    }
+
+    &__text {
+      font-size: .8rem;
+
+      & i {
+        font-size: .8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../assets/variables/variables";
+
+.blog {
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__current-post {
+    width: 85%;
+
+    & h4 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__recent-post {
+    width: 15%;
+    
+    & h5 {
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__details {
+    margin-bottom: 50px;
+
+    & h2{
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    & blockquote {
+      line-height: 35px;
+    }
+
+    @media only screen and (max-width: $tablet-start) {
+      & p {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+      }
+    }
+  }
+
+  &__desc {
+    & p i {
+      color: $secondary-color;
+    }
+  }
+
+  &__post-item {
+    margin-bottom: 15px;
+
+    & h6 {
+      font-size: .9rem;
+      transition: all .7s ease-in-out;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+  .blog {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__current-post {
+      width: 100%;
+    }
+  
+    &__recent-post {
+      width: 100%;
+    }
+
+    &__details {
+      & p {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+      }
+    }
+  }
+
+  .comment {
+    &__form-container {
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+
+}

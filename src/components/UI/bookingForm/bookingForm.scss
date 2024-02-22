@@ -1,0 +1,81 @@
+@import "../../../assets/variables/variables";
+
+.booking {
+  width: 50%;
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	  grid-gap: 15px;
+    width: 100%;
+
+    &--item {
+      width: 100%;
+      height: 2rem;
+
+      & input {
+        box-sizing: border-box;
+        padding: 0 8px;
+        border: 1px solid $blue-color;
+        color: $text-color;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active {
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: $text-color;
+          transition: background-color 5000s ease-in-out 0s;
+          box-shadow: inset 0 0 20px 20px rgb(0, 13, 107, .2);
+        }
+      }
+
+      & select,
+      & textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 0 8px;
+        color: $text-color;
+        border: 1px solid $blue-color;
+        border-radius: 4px;
+      }
+
+      & input[type="time"] {
+        &::before {
+          content: "Journey Time";
+          color: $text-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      & input:focus,
+      & select:focus,
+      & textarea:focus {
+        outline: none;
+        background: rgb(0, 13, 107, .2);
+      }
+    }
+
+    &--msg {
+      grid-column: 1 / -1;
+      height: 5rem;
+    }
+
+  }
+}
+
+@media only screen and (max-width: $tablet-start) {
+      
+  .booking {
+    width: 100%;
+
+    &__form {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+}

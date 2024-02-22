@@ -1,0 +1,18 @@
+@import "../../../assets/variables/variables";
+
+.login-link {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  & a {
+    text-decoration: none;
+    color: $white-color;
+    font-size: 0.9rem;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

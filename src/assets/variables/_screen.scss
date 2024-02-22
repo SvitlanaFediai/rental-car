@@ -1,0 +1,8 @@
+$width: 1140px;
+$tablet-end: $width - 1;
+$tablet-start: 768px;
+$mobile: 576px;
+
+$num: attr(data-rating);
+$percent: calc(#{$num} / 5 * 100);
+

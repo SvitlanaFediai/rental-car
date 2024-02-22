@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useEffect } from "react";
+import "./App.scss";
+import Layout from "./components/layout/layout";
+import Error from "./pages/error/error";
+import Login from "./pages/login/login";
+import routes from "./routers/routers";
+import PathConstants from "./routers/pathConstans";
+import ModalWindow from "./components/UI/modalWindow/modalWindow";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { BASE_URL } from "./assets/utils/base";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: (
+          <>
+            <ModalWindow />
+            <Layout />
+          </>
+        ),
+        errorElement: <Error />,
+        children: routes,
+      },
+      {
+        path: PathConstants.LOGIN,
+        element: (
+          <>
+            <ModalWindow />
+            <Login />
+          </>
+        ),
+      },
+    ],
+    { basename: BASE_URL }
   );
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

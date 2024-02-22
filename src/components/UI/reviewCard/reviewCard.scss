@@ -1,0 +1,27 @@
+@import "../../../assets/variables/variables";
+
+.review {
+  &__card {
+    padding: 20px;
+    border: 1px solid $text-color;
+    height: auto;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10px;
+    border-radius: 20px;
+    background-color: $white-color;
+  }
+
+  &__user-info {
+    display: flex;
+    gap: 1rem;
+
+    & img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+}
